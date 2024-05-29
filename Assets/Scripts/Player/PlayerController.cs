@@ -93,7 +93,6 @@ public class PlayerController : MonoBehaviour
 
     }
     #endregion
-
     #region InputSystem - Jump
     public void InputJump(InputAction.CallbackContext context)
     {
