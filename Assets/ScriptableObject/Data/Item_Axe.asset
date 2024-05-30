@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8b543f3f563214fa23bd0916d09458, type: 3}
+  m_Name: Item_Axe
+  m_EditorClassIdentifier: 
+  itemName: "\uB3C4\uB07C"
+  itemDescription: "\uC790\uC6D0\uC744 \uCC44\uCDE8\uD560 \uB54C \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
+  itemType: 0
+  itemIcon: {fileID: 21300000, guid: 06e8d836c76eb494db7ab3784ffcb0eb, type: 3}
+  itemObject: {fileID: 1605752661121068284, guid: e9a8a3ec46cc4584ca45eb9aaa9de1e5, type: 3}
+  canStack: 1
+  maxStack: 0

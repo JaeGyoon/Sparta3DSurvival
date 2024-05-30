@@ -1,6 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpPower;
     [SerializeField] private LayerMask groundLayerMask;
 
+    [Header("인벤토리")]
+    public bool canLook;        // 인벤토리를 열었을때는 카메라가 회전하지 않도록
+    public Action inventory;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -40,7 +43,10 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        CameraLook();
+        if ( canLook )
+        {
+            CameraLook();
+        }        
     }
 
     #region InputSystem - Move 
@@ -149,5 +155,21 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    public void OnInventory(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            inventory?.Invoke();
+            ToggleCursor();
+        }
+    }
 
+    private void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        canLook = !toggle;
+
+    }
 }

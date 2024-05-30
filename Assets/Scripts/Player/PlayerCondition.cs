@@ -32,12 +32,12 @@ public class PlayerCondition : MonoBehaviour, IDamageable
         Debug.Log("¡Í±›!");
     }
 
-    private void Heal(float amount)
+    public void Heal(float amount)
     {
         healthBar.UpValue(amount);
     }
 
-    private void Eat(float amount)
+    public void Eat(float amount)
     {
         hungerBar.UpValue(amount);
     }

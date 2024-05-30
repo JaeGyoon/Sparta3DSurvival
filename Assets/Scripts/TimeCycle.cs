@@ -14,6 +14,7 @@ public class TimeCycle : MonoBehaviour
     [SerializeField] private float startTime;
     [SerializeField] private float timeRate;
 
+    // 기준이 되는 정오 시간( 90도 일때 태양이 중천에 떠있음)
     private Vector3 noon= new Vector3 (90f, 0f, 0f);
 
 
@@ -51,8 +52,8 @@ public class TimeCycle : MonoBehaviour
         RenderSettings.ambientIntensity = lightIntensity.Evaluate(oneDayPercentage);
         RenderSettings.reflectionIntensity = reflectionIntensity.Evaluate(oneDayPercentage);
 
-        Debug.Log($"ambientIntensity: {lightIntensity.Evaluate(oneDayPercentage)}");
-        Debug.Log($"reflectionIntensity: {reflectionIntensity.Evaluate(oneDayPercentage)}");
+        //Debug.Log($"ambientIntensity: {lightIntensity.Evaluate(oneDayPercentage)}");
+        //Debug.Log($"reflectionIntensity: {reflectionIntensity.Evaluate(oneDayPercentage)}");
     }
 
     void UpdateLighting(Light light, Gradient gradient, AnimationCurve animationCurve)
